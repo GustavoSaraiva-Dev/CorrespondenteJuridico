@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {ScrollView} from 'react-native';
-import {Container, DropDownGroup, DropDownTitle} from './styles';
+import React, { useState, useEffect } from 'react';
+import { ScrollView } from 'react-native';
+import { Container, DropDownGroup, DropDownTitle } from './styles';
 import InputContainer from '../../containers/InputContainer';
 
 interface Estado {

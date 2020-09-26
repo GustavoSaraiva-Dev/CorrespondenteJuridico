@@ -1,0 +1,16 @@
+export const TiposDeArray = [
+  { id: 1, descricao: 'Acompanhamentos' },
+  { id: 2, descricao: 'Andamentos' },
+  { id: 3, descricao: 'Cargas' },
+  { id: 4, descricao: 'Elaboração de Tese' },
+  { id: 5, descricao: 'Mandados' },
+  { id: 6, descricao: 'Visitas In Loco' },
+  { id: 7, descricao: 'Certidões' },
+  { id: 8, descricao: 'Distribuições' },
+  { id: 9, descricao: 'Exame de processos' },
+  { id: 10, descricao: 'Protocolos' },
+  { id: 11, descricao: 'Análises' },
+  { id: 12, descricao: 'Cópías' },
+  { id: 13, descricao: 'Elaboração de Peças' },
+  { id: 14, descricao: 'Guias' },
+];
