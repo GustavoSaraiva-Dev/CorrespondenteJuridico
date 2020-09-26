@@ -27,7 +27,7 @@ export const Image = styled.Image``;
 export const Description = styled.Text<DescriptionProps>`
   text-align: left;
   font-family: 'Roboto-Regular';
-  font-size: ${(props) => props.tamanhoFonte || 20};
+  font-size: ${(props) => props.tamanhoFonte || '20px'};
   margin: 18px;
   color: ${(props) => `${props.corHex || 'white'}`};
 `;

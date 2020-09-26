@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, ScrollView} from 'react-native';
 import {
   Container,
   Custom,
@@ -9,9 +9,19 @@ import {
 } from './styles';
 import InputContainer from '../../containers/InputContainer';
 
+interface Estado {
+  id: number;
+  sigla: string;
+  nome: string;
+}
 const NovaDiligencia: React.FC = () => {
+  const [estados, setEstados] = useState<Estado[]>([]);
   useEffect(() => {
-    ('');
+    fetch(
+      'https://servicodados.ibge.gov.br/api/v1/localidades/estados?OrderBy=nome',
+    )
+      .then((response) => response.json())
+      .then((res) => setEstados(res));
   }, []);
   return (
     <ScrollView>
@@ -33,14 +43,17 @@ const NovaDiligencia: React.FC = () => {
           <DropDownTitle>Tipo de Solicitação</DropDownTitle>
           <DropDown>
             <Custom
+              style={{placeholder: {color: '#6C6C80'}}}
               onValueChange={() => ''}
               placeholder={{
                 label: 'Tipo de Solicitação',
+                color: '#34CB79',
                 value: 0,
-                color: '#9EA0A4',
-                inputLabel: 'Teste  000',
               }}
-              items={[{ label: 'Valor 1', value: 1 }]}
+              items={estados?.map((estado) => ({
+                label: estado.nome,
+                value: estado.id,
+              }))}
             />
           </DropDown>
         </DropDownGroup>
@@ -55,18 +68,5 @@ const NovaDiligencia: React.FC = () => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  inputAndroid: {
-    fontSize: 16,
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderWidth: 0.5,
-    borderColor: 'purple',
-    borderRadius: 8,
-    color: 'black',
-    paddingRight: 30, // to ensure the text is never behind the icon
-  },
-});
 
 export default NovaDiligencia;

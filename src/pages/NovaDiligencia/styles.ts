@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import RNPickerSelect, { PickerSelectProps } from 'react-native-picker-select';
+import RNPickerSelect, {PickerSelectProps} from 'react-native-picker-select';
 
 export const Container = styled.View`
   flex: 1;
@@ -8,7 +8,7 @@ export const Container = styled.View`
   align-items: flex-start;
 `;
 
-export const Custom = styled(RNPickerSelect)<PickerSelectProps>``;
+export const Custom = styled(RNPickerSelect)``;
 
 export const DropDown = styled.View`
   width: 100%;
